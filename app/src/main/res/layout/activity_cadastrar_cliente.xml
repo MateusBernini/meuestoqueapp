@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginLeft="16dp"
+    android:layout_marginTop="16dp"
+    android:layout_marginRight="16dp"
+    android:orientation="vertical"
+    tools:context=".activity.CadastrarClienteActivity">
+
+    <TextView
+        android:id="@+id/textView7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/nomeCli"
+        android:textColor="#009688"
+        android:textSize="18sp"
+        android:textStyle="bold|italic" />
+
+    <EditText
+        android:id="@+id/txtNomeCliente"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:background="@drawable/bg_edit_text"
+        android:ems="10"
+        android:hint="@string/campoObg"
+        android:autofillHints="@string/campoObg"
+        android:inputType="textPersonName"
+        android:padding="10dp" />
+
+    <TextView
+        android:id="@+id/textView8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/txtviewCelular"
+        android:textColor="#009688"
+        android:textSize="18sp"
+        android:textStyle="bold|italic" />
+
+    <com.santalu.maskara.widget.MaskEditText
+        android:id="@+id/txtCelularCliente"
+        android:layout_width="match_parent"
+        android:layout_height="43dp"
+        android:layout_marginTop="-2dp"
+        android:layout_marginBottom="8dp"
+        android:background="@drawable/bg_edit_text"
+        android:ems="10"
+        android:hint="@string/campoObg"
+        android:autofillHints="@string/campoObg"
+        android:inputType="number"
+        android:padding="10dp"
+        app:mask="(##)#####-####"
+        app:maskCharacter="#"
+        app:maskStyle="normal" />
+
+    <TextView
+        android:id="@+id/textView11"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/txtviewEmail"
+        android:textColor="#009688"
+        android:textSize="18sp"
+        android:textStyle="bold|italic" />
+
+    <EditText
+        android:id="@+id/txtEmailCliente"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="-2dp"
+        android:layout_marginBottom="8dp"
+        android:background="@drawable/bg_edit_text"
+        android:ems="10"
+        android:hint="@string/campoOpc"
+        android:autofillHints="@string/campoOpc"
+        android:inputType="textEmailAddress"
+        android:padding="10dp" />
+
+    <TextView
+        android:id="@+id/textView12"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/txtviewEndereco"
+        android:textColor="#009688"
+        android:textSize="18sp"
+        android:textStyle="bold|italic"
+        android:visibility="visible" />
+
+    <EditText
+        android:id="@+id/txtEnderecoCliente"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="-2dp"
+        android:layout_marginBottom="8dp"
+        android:background="@drawable/bg_edit_text"
+        android:ems="10"
+        android:hint="@string/campoOpc"
+        android:autofillHints="@string/campoOpc"
+        android:inputType="textPersonName"
+        android:padding="10dp" />
+
+    <TextView
+        android:id="@+id/textView13"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/txtviweInfoAdic"
+        android:textColor="#009688"
+        android:textSize="18sp"
+        android:textStyle="bold|italic"
+        android:visibility="visible" />
+
+    <EditText
+        android:id="@+id/txtInfoCliente"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:layout_marginTop="-2dp"
+        android:layout_marginBottom="16dp"
+        android:autofillHints="@string/campoOpc"
+        android:background="@drawable/bg_edit_text"
+        android:ems="10"
+        android:hint="@string/campoOpc"
+        android:inputType="textPersonName"
+        android:padding="10dp" />
+
+    <Button
+        android:id="@+id/btnSalvarCliente"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="salvarCliente"
+        android:padding="16dp"
+        android:text="@string/btSalvarCli"
+        android:theme="@style/botaoPadrao" />
+
+
+</androidx.appcompat.widget.LinearLayoutCompat>

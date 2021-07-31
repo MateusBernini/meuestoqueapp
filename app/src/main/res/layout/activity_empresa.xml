@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginLeft="8dp"
+    android:layout_marginTop="8dp"
+    android:layout_marginRight="8dp"
+    android:layout_marginBottom="8dp"
+    android:orientation="vertical"
+    tools:context=".activity.EmpresaActivity">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+
+
+    <TextView
+        android:id="@+id/txtNomeEmpresa"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:textSize="24dp"
+        android:textStyle="bold"
+        android:textColor="@color/color_black"/>
+
+    <TextView
+        android:id="@+id/txtCelEmpresa"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:textSize="24dp" />
+
+    <TextView
+        android:id="@+id/txtTelEmpresa"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:textSize="24dp" />
+
+    <TextView
+        android:id="@+id/txtEmailEmpresa"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:textSize="24dp" />
+
+    <TextView
+        android:id="@+id/txtCepEmpresa"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:textSize="24dp" />
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Insira os Dados da sua Empresa"
+        android:textStyle="italic"
+        android:textSize="18sp"
+        android:textColor="@color/colorPrimary"/>
+
+    <EditText
+
+        android:id="@+id/editNomeEmpresa"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Empresa"
+        android:inputType="textPersonName"
+        tools:layout_editor_absoluteX="100dp"
+        tools:layout_editor_absoluteY="109dp" />
+
+    <com.santalu.maskara.widget.MaskEditText
+
+        android:id="@+id/editCelEmpresa"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="-2dp"
+        android:layout_marginBottom="8dp"
+        android:ems="10"
+        android:hint="Celular"
+        android:inputType="number"
+        android:padding="10dp"
+        app:mask="(##)#####-####"
+        app:maskCharacter="#"
+        app:maskStyle="normal" />
+
+    <com.santalu.maskara.widget.MaskEditText
+
+        android:id="@+id/editTelEmpresa"
+        android:layout_width="match_parent"
+        android:layout_height="43dp"
+        android:layout_marginTop="-2dp"
+        android:layout_marginBottom="8dp"
+        android:ems="10"
+        android:hint="Fixo"
+        android:inputType="number"
+        android:padding="10dp"
+        app:mask="(##)####-####"
+        app:maskCharacter="#"
+        app:maskStyle="normal" />
+
+    <EditText
+
+
+        android:id="@+id/editEmailEmpresa"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Email"
+        android:inputType="textPersonName"
+        tools:layout_editor_absoluteX="100dp"
+        tools:layout_editor_absoluteY="109dp" />
+
+    <EditText
+
+
+        android:id="@+id/editCepEmpresa"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Endereço ou Cep"
+        android:inputType="textPersonName"
+        tools:layout_editor_absoluteX="100dp"
+        tools:layout_editor_absoluteY="109dp" />
+
+    <Button
+
+        android:id="@+id/btSvEmpresa"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="addEmpresa"
+        android:theme="@style/botaoPadrao"
+        android:text="Salvar" />
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/Empresa"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/Empresa2"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/Empresa3"/>
+
+
+    </LinearLayout>
+
+</ScrollView>

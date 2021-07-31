@@ -1,0 +1,46 @@
+<resources>
+    <string name="app_name">MeuEstoqueApp</string>
+    <string name="cadastro_produto">Cadastrar Produto/ Peça</string>
+    <string name="title_activity_telamain">Meus Produtos/ Peças</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <string name="Dica">Dica: Para editar as informações dos itens da tabela, volte na tela principal e mantenha pressionado o item que deseja para realizar a edição!</string>
+    <string name="Dica2">Para deletar algum item basta arrastá-lo para direita ou esquerda!</string>
+    <string name="meusClientes">Meus Clientes</string>
+    <string name="ordensServiço">Minhas Ordens de Seviço</string>
+    <string name="gerarRelatório">Gerar Relatório de Produtos</string>
+
+
+    //Layout cad Cliente
+    <string name="nomeCli">Nome Cliente</string>
+    <string name="campoObg">(Campo Obrigatório)</string>
+    <string name="campoOpc">(Campo Opcional)</string>
+    <string name="txtviewCelular">Celular</string>
+    <string name="txtviewFone">Telefone Fixo</string>
+    <string name="txtviewEmail">Email</string>
+    <string name="txtviewEndereco">Endereço</string>
+    <string name="txtviweInfoAdic">Informações Adicionais</string>
+    <string name="btSalvarCli">SALVAR CLIENTE</string>
+    <string name="btAtualizarCli">ATUALIZAR CLIENTE</string>
+    <string name="title_activity_meus_clientes">MeusClientesActivity</string>
+    <string name="title_activity_os">OsActivity</string>
+    <string name="Empresa">Dica: Cadastrar os dados da sua empresa é opcional, mas tendo esses dados salvos eles serão mostrados nos relatórios que forem gerados!</string>
+    <string name="Empresa2">Dica: Para remover os dados da sua Empresa, basta limpar os campos e pressionar o botão SALVAR!</string>
+    <string name="Empresa3">Dica: Para alterar os dados da sua Empresa, basta preencher os campos com outros valore e pressionar o botão SALVAR!</string>
+    //Layout cad Cliente
+
+
+    <string name="create_pdf">Create PDF</string>
+    <string name="msg_progress_pdf">XML layout is in created PDF file. Please wait few moment.\nTotal PDF page :%s</string>
+    <string name="msg_progress_merger_pdf">All pdf file merge into one file. Please wait few moment. After done of mergig pdf file, go to pdf file path.</string>
+    <string name="error_file">Can\'t read pdf file</string>
+    <string name="send_to">Send mail...</string>
+
+
+</resources>

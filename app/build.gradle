@@ -1,0 +1,85 @@
+apply plugin: 'com.android.application'
+
+
+android {
+    compileSdkVersion 30
+    buildToolsVersion "30.0.3"
+    defaultConfig {
+        applicationId "com.example.estoqueapp"
+        minSdkVersion 25
+        targetSdkVersion 30
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    packagingOptions{
+        exclude 'com/itextpdf/io/font/cmap/-info.txt'
+        exclude 'com/itextpdf/io/font/cmap/*'
+        exclude 'META-INF/DEPENDENCIES'
+        exclude 'META-INF/LICENSE'
+        exclude 'META-INF/LICENSE.txt'
+        exclude 'META-INF/license.txt'
+        exclude 'META-INF/NOTICE'
+        exclude 'META-INF/NOTICE.txt'
+        exclude 'META-INF/notice.txt'
+        exclude 'META-INF/ASL2.0'
+    }
+
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation 'androidx.appcompat:appcompat:1.2.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
+    implementation 'com.google.android.material:material:1.3.0'
+    implementation 'androidx.navigation:navigation-fragment:2.3.5'
+    implementation 'androidx.navigation:navigation-ui:2.3.5'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.2'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
+    implementation platform('com.google.firebase:firebase-bom:27.0.0')
+    implementation 'com.google.firebase:firebase-analytics'
+    implementation 'com.google.firebase:firebase-database'
+    implementation 'com.google.firebase:firebase-storage'
+    implementation 'com.google.firebase:firebase-auth'
+    //IMPLEMENTAÇÃO PARA MÁSCARA DE MOEDA
+    implementation 'com.github.BlacKCaT27:CurrencyEditText:2.0.2'
+
+    //IMPLEMENTAÇÃO PARA DEPENDÊNCIA DIALOG DE PROGRESSO
+    implementation 'com.github.d-max:spots-dialog:1.1@aar'
+    //DEPENÊNCIA PARA PICASSO
+    implementation 'com.squareup.picasso:picasso:2.71828'
+    //DEPENDÊNCIA PARA COROUSEL VIEW
+    implementation 'com.synnapps:carouselview:0.1.5'
+    //Implementação para o tabela pdf
+    implementation 'com.github.barteksc:android-pdf-viewer:2.8.2'
+    //Implementação máscara de telefone e pdftable
+    implementation 'com.github.salehyarahmadi:DataTable:v1.0.1'
+    //Implementação máscara de telefone
+    implementation 'com.github.santalu:maskara:1.0.0'
+    implementation 'com.github.salehyarahmadi:DataTable:v1.0.0'
+    implementation "androidx.cardview:cardview:1.0.0"
+
+
+
+    //IMPLEMENTAÇÃO ITEXT7
+
+    implementation 'com.itextpdf:io:7.0.2'
+    implementation 'com.itextpdf:kernel:7.0.2'
+    implementation 'com.itextpdf:layout:7.0.2'
+
+
+
+
+}
+
+apply plugin: 'com.google.gms.google-services'

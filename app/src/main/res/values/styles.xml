@@ -1,0 +1,33 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <style name="botaoPadrao" parent="Theme.AppCompat.Light">
+        <item name="colorControlHighlight">#77F10C</item>
+        <item name="colorButtonNormal">@color/colorPrimary</item>
+        <item name="android:textColor">#FDFDFC</item>
+
+
+    </style>
+
+    <style name="spinnerPadrao" parent="Theme.AppCompat.Light">
+        <item name="colorControlHighlight">#77F10C</item>
+        <item name="colorButtonNormal">@color/colorPrimary</item>
+        <item name="android:textColor">#000000</item>
+
+
+    </style>
+
+    <style name="botaoPadraoAlternativo" parent="Theme.AppCompat.Light">
+    <item name="colorControlHighlight">#07FF7F</item>
+    <item name="colorButtonNormal">@color/vermelhoPdf</item>
+        <item name="android:textColor">#FDFDFC</item>
+    </style>
+
+</resources>

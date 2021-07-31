@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginLeft="16dp"
+    android:layout_marginRight="16dp"
+    android:orientation="vertical"
+    tools:context=".activity.AtualizarClienteActivity">
+
+    <TextView
+        android:id="@+id/textView15"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/nomeCli"
+        android:textColor="#009688"
+        android:textSize="18sp"
+        android:textStyle="bold|italic" />
+
+    <EditText
+        android:id="@+id/nomeAtualizar"
+        android:layout_width="match_parent"
+        android:layout_height="44dp"
+        android:layout_marginBottom="8dp"
+        android:background="@drawable/bg_edit_text"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:padding="10dp"
+        android:text="Nome"
+        tools:layout_editor_absoluteY="98dp" />
+
+    <TextView
+        android:id="@+id/textView16"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/txtviewCelular"
+        android:textColor="#009688"
+        android:textSize="18sp"
+        android:textStyle="bold|italic" />
+
+    <com.santalu.maskara.widget.MaskEditText
+        android:id="@+id/celularAtualizar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:background="@drawable/bg_edit_text"
+        android:ems="10"
+        android:inputType="phone"
+        android:padding="10dp"
+        android:text="Celular"
+        app:mask="(##)#####-####"
+        app:maskStyle="normal"
+        tools:layout_editor_absoluteX="67dp"
+        tools:layout_editor_absoluteY="237dp" />
+
+    <TextView
+        android:id="@+id/textView18"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/txtviewEmail"
+        android:textColor="#009688"
+        android:textSize="18sp"
+        android:textStyle="bold|italic" />
+
+
+    <EditText
+        android:id="@+id/emailAtualizar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:background="@drawable/bg_edit_text"
+        android:ems="10"
+        android:hint="Adicionar Email"
+        android:inputType="textEmailAddress"
+        android:padding="10dp" />
+
+    <TextView
+        android:id="@+id/textView19"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/txtviewEndereco"
+        android:textColor="#009688"
+        android:textSize="18sp"
+        android:textStyle="bold|italic" />
+
+    <EditText
+        android:id="@+id/enderecoAtualizar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:background="@drawable/bg_edit_text"
+        android:ems="10"
+        android:hint="Adicionar Endereço"
+        android:inputType="textPersonName"
+        android:padding="10dp" />
+
+    <TextView
+        android:id="@+id/textView20"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/txtviweInfoAdic"
+        android:textColor="#009688"
+        android:textSize="18sp"
+        android:textStyle="bold|italic" />
+
+    <EditText
+        android:id="@+id/infoAdicAtualizar"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:layout_marginTop="-2dp"
+        android:layout_marginBottom="16dp"
+        android:autofillHints="@string/campoOpc"
+        android:background="@drawable/bg_edit_text"
+        android:ems="10"
+        android:hint="Adicionar Informações Adicionais"
+        android:inputType="textPersonName"
+        android:padding="10dp" />
+
+
+    <Button
+        android:id="@+id/btAtualizarCli"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="atualizarCliente"
+        android:text="Salvar Alterações"
+        android:theme="@style/botaoPadrao"
+        tools:layout_editor_absoluteX="145dp"
+        tools:layout_editor_absoluteY="416dp" />
+
+
+</androidx.appcompat.widget.LinearLayoutCompat>

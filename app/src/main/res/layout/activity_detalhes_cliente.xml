@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginLeft="16dp"
+    android:layout_marginTop="8dp"
+    android:layout_marginRight="16dp"
+    android:layout_marginBottom="8dp"
+    android:orientation="vertical"
+    tools:context=".activity.DetalhesClienteActivity">
+
+
+    <TextView
+        android:id="@+id/nomedetail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:drawableLeft="@drawable/ic_baseline_person_24"
+        android:drawablePadding="8dp"
+        android:text="Nome"
+        android:textColor="#040303"
+        android:textSize="30sp" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:background="@android:color/darker_gray" />
+
+    <TextView
+        android:id="@+id/celDetail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:drawablePadding="8dp"
+        android:onClick="visualizarCelular"
+        android:text="Celular"
+        android:textColor="@color/textosdiversos"
+        android:textSize="24sp"
+        app:drawableLeftCompat="@drawable/ic_phone" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:background="@android:color/darker_gray" />
+
+
+
+
+
+    <TextView
+        android:id="@+id/emailDetail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:drawableLeft="@drawable/ic_email"
+        android:drawablePadding="8dp"
+        android:text="Email"
+        android:textColor="#040303"
+        android:textSize="24sp" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:background="@android:color/darker_gray" />
+
+    <TextView
+        android:id="@+id/enderecoDetail"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:text="Endereço"
+        android:textColor="#040303"
+        android:textSize="18sp" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:background="@android:color/darker_gray" />
+
+    <TextView
+        android:id="@+id/infoCliDetail"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="Informações Adicionais"
+        android:textColor="#040303"
+        android:textSize="18sp" />
+
+
+
+</androidx.appcompat.widget.LinearLayoutCompat>

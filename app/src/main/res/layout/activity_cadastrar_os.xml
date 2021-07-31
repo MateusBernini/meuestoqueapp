@@ -1,0 +1,386 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent">
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="12dp"
+        android:layout_marginRight="12dp"
+        android:orientation="vertical"
+        tools:context=".activity.CadastrarOsActivity">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:text="Defina o Tipo da Ordem de Serviço"
+            android:textColor="#009688"
+            android:textSize="18sp"
+            android:textStyle="bold"/>
+
+        <Spinner
+            android:id="@+id/spinnerTipo"
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:layout_marginBottom="8dp"
+            android:theme="@style/spinnerPadrao" />
+
+        <TextView
+            android:id="@+id/textView23"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:text="Escolher Cliente já Cadastrado"
+            android:textColor="#009688"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <SearchView
+            android:id="@+id/searchCliente"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerCliOs"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_marginBottom="8dp" />
+
+        <TextView
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:text="Dados do Cliente"
+            android:textColor="#009688"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/clienteOs"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:background="@drawable/bg_edit_text"
+            android:ems="10"
+            android:hint="@string/nomeCli"
+            android:inputType="textPersonName"
+            android:padding="10dp" />
+
+        <com.santalu.maskara.widget.MaskEditText
+            android:id="@+id/celularOs"
+            android:layout_width="match_parent"
+            android:layout_height="43dp"
+            android:layout_marginTop="-2dp"
+            android:layout_marginBottom="8dp"
+            android:autofillHints="@string/campoObg"
+            android:background="@drawable/bg_edit_text"
+            android:ems="10"
+            android:hint="Celular"
+            android:inputType="number"
+            android:padding="10dp"
+            app:mask="(##)#####-####"
+            app:maskCharacter="#"
+            app:maskStyle="normal" />
+
+        <EditText
+            android:id="@+id/emailOs"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="-2dp"
+            android:layout_marginBottom="8dp"
+            android:autofillHints="@string/campoOpc"
+            android:background="@drawable/bg_edit_text"
+            android:ems="10"
+            android:hint="Email"
+            android:inputType="textEmailAddress"
+            android:padding="10dp" />
+
+        <EditText
+
+            android:id="@+id/enderecoOs"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="-2dp"
+            android:layout_marginBottom="8dp"
+            android:background="@drawable/bg_edit_text"
+            android:ems="10"
+            android:hint="Endereço"
+            android:inputType="textPersonName"
+            android:padding="10dp" />
+
+        <TextView
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:text="Escolher Produto/ Peça utilizada(s)"
+            android:textColor="#009688"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <SearchView
+            android:id="@+id/searchProduto"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <androidx.recyclerview.widget.RecyclerView
+
+            android:id="@+id/recyclerProdOs"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_marginBottom="8dp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:text="Item Selecionado"
+            android:textColor="@color/textosdiversos"
+            android:textSize="18sp"
+            android:textStyle="bold"/>
+
+
+
+
+
+
+
+        <EditText
+            android:id="@+id/campoProdNomeOs"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:background="@drawable/bg_edit_text"
+            android:ems="10"
+            android:hint="Produto/ Peça"
+            android:inputType="textPersonName"
+            android:padding="10dp" />
+
+        <EditText
+            android:id="@+id/campoQtdProdOs"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:background="@drawable/bg_edit_text"
+            android:ems="10"
+            android:hint="Quantidade Utilizada"
+            android:inputType="number|textPersonName"
+            android:padding="10dp" />
+
+                <com.blackcat.currencyedittext.CurrencyEditText
+                    android:id="@+id/campoValOs"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/bg_edit_text"
+                    android:ems="10"
+                    android:hint="Valor de Venda"
+                    android:inputType="number"
+                    android:padding="10dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:text="TOTAL Item Selecionado"
+                android:textColor="@color/textosdiversos"
+                android:textSize="18sp"
+                android:textStyle="bold"/>
+
+
+                <com.blackcat.currencyedittext.CurrencyEditText
+                    android:id="@+id/campoValQtdMult"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:layout_weight="1"
+                    android:ems="10"
+                    android:enabled="false"
+                    android:hint="Valor de Venda"
+                    android:inputType="textPersonName|numberDecimal"
+                    android:padding="10dp"
+                    android:textColor="@color/color_black" />
+
+
+
+
+        <Button
+            android:id="@+id/btLimpar1"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="10dp"
+            android:background="@color/textosdiversos"
+            android:textStyle="bold"
+            android:text="Adicionar na lista"
+            android:textColor="@color/colorWhite"
+            android:textSize="14dp" />
+
+
+
+        <TextView
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:text="Lista Itens"
+            android:textColor="#009688"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+
+        <ListView
+            android:id="@+id/listView"
+            android:layout_width="match_parent"
+            android:layout_height="300dp" />
+
+        <Button
+            android:id="@+id/btLimpar3"
+            android:layout_width="100dp"
+            android:layout_height="30dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="10dp"
+            android:background="@color/vermelhoPdf"
+            android:text="Limpar Lista"
+            android:textColor="@color/colorWhite"
+            android:textStyle="bold" />
+
+        <TextView
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:text="TOTAL Lista"
+            android:textColor="#009688"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <com.blackcat.currencyedittext.CurrencyEditText
+            android:id="@+id/listaItensViewFormatted"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:enabled="false"
+            android:textColor="#000000" />
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:text="Descrição do Serviço"
+            android:textColor="#009688"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+
+        <EditText
+            android:id="@+id/campoDescricaoServico"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_marginBottom="8dp"
+            android:background="@drawable/bg_edit_text" />
+
+        <TextView
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:text="Valor da Mão de Obra"
+            android:textColor="#009688"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <com.blackcat.currencyedittext.CurrencyEditText
+
+            android:id="@+id/valMaoObra"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:layout_weight="1"
+            android:background="@drawable/bg_edit_text"
+            android:ems="10"
+            android:hint="Valor mão de Obra"
+            android:inputType="textPersonName"
+            android:padding="10dp" />
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="8dp"
+                android:layout_marginBottom="8dp"
+                android:text="TOTAL ="
+                android:textColor="#009688"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <com.blackcat.currencyedittext.CurrencyEditText
+
+                android:id="@+id/txtTotalOs"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:layout_weight="1"
+                android:background="@drawable/bg_edit_text2"
+                android:ems="10"
+                android:hint="Valor de Venda"
+                android:inputType="textPersonName"
+                android:padding="10dp"
+                android:textColor="#FFFFFF" />
+
+
+        </LinearLayout>
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:text="Data de Emissão"
+            android:textColor="#009688"
+            android:textSize="18sp" />
+
+        <com.santalu.maskara.widget.MaskEditText
+            android:id="@+id/editDataEmissao"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="-2dp"
+            android:layout_marginBottom="8dp"
+            android:autofillHints="@string/campoObg"
+            android:background="@drawable/bg_edit_text"
+            android:ems="10"
+            android:inputType="number"
+            android:padding="10dp"
+            app:mask="##/##/####"
+            app:maskCharacter="#"
+            app:maskStyle="normal" />
+
+
+        <Button
+            android:id="@+id/button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:onClick="salvarOs"
+            android:text="Salvar Ordem de Serviço"
+            android:theme="@style/botaoPadrao" />
+
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+</ScrollView>

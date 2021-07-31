@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.estoqueapp">
+    <!-- Permissoes da Internet -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" /> <!-- Permissoes galeria/camera -->
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".activity.EmpresaActivity"
+            android:label="Minha Empresa"
+            android:parentActivityName=".activity.TelamainActivity"/>
+
+        <activity
+            android:name=".activity.EditarOsActivity"
+            android:label="Editar Ordem de Serviço"
+            android:parentActivityName=".activity.OsActivity" />
+        <activity
+            android:name=".activity.OldPrintActivity"
+            android:label="Relatório de Produtos"
+            android:parentActivityName=".activity.TelamainActivity" />
+        <activity
+            android:name=".activity.DetalhesOsActivity"
+            android:label="Detalhes da Ordem de Serviço"
+            android:parentActivityName=".activity.OsActivity" />
+        <activity
+            android:name=".activity.OsActivity"
+            android:label="Minhas Ordens de Serviço"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".activity.CadastrarOsActivity"
+            android:label="Cadastrar Ordem de Serviço"
+            android:parentActivityName=".activity.OsActivity"/>
+        <activity
+            android:name=".activity.DetalhesClienteActivity"
+            android:parentActivityName=".activity.MeusClientesActivity" />
+        <activity
+            android:name=".activity.AtualizarClienteActivity"
+            android:parentActivityName=".activity.MeusClientesActivity" />
+        <activity
+            android:name=".activity.MeusClientesActivity"
+            android:label="Meus Clientes"
+            android:parentActivityName=".activity.TelamainActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".activity.CadastrarClienteActivity"
+            android:parentActivityName=".activity.MeusClientesActivity" />
+        <activity
+            android:name=".activity.AtualizarProduto"
+            android:label="Editar Produto/ Peça"
+            android:parentActivityName=".activity.TelamainActivity" />
+        <activity
+            android:name=".activity.DetalhesProdutoActivity"
+            android:label="Detalhes Produto/ Peça"
+            android:parentActivityName=".activity.TelamainActivity" />
+        <activity
+            android:name=".activity.CadastrarProdutoActivity"
+            android:label="@string/cadastro_produto"
+            android:parentActivityName=".activity.TelamainActivity" />
+        <activity
+            android:name=".activity.TelamainActivity"
+            android:label="@string/title_activity_telamain"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".activity.CadastroActivity"
+            android:label="MeuEstoqueApp">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>
