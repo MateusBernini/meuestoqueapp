@@ -26,8 +26,12 @@ import com.itextpdf.kernel.color.Color;
 import com.itextpdf.kernel.color.DeviceRgb;
 import com.itextpdf.kernel.pdf.PdfDocument;
 import com.itextpdf.kernel.pdf.PdfWriter;
+import com.itextpdf.kernel.pdf.canvas.PdfCanvas;
 import com.itextpdf.layout.Document;
 import com.itextpdf.layout.border.Border;
+import com.itextpdf.layout.border.Border3D;
+import com.itextpdf.layout.border.DottedBorder;
+import com.itextpdf.layout.border.RidgeBorder;
 import com.itextpdf.layout.element.Cell;
 import com.itextpdf.layout.element.Image;
 import com.itextpdf.layout.element.Paragraph;
@@ -146,7 +150,14 @@ public class DetalhesOsActivity extends AppCompatActivity {
 
     }
 
+    public void berniniClick(View view){
+        try {
+            bernini();
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
 
+    }
 
 
     private void ffff()throws FileNotFoundException{
@@ -350,6 +361,214 @@ public class DetalhesOsActivity extends AppCompatActivity {
 
 
     }
+
+
+    private void bernini()throws FileNotFoundException{
+
+        myRef = ConfiguracaoFirebase.getFirebase().child("empresa").child(ConfiguracaoFirebase.getIdUsuario()).child("1");
+        myRef.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                String nome= String.valueOf(snapshot.child("nomeempresa").getValue());
+                String cel = String.valueOf(snapshot.child("celular").getValue());
+                String tel = String.valueOf(snapshot.child("telefone").getValue());
+                String email = String.valueOf(snapshot.child("email").getValue());
+                String cep = String.valueOf(snapshot.child("cep").getValue());
+
+
+
+                File file = new File(DetalhesOsActivity.this.getExternalFilesDir("/"),(editNomePdf.getText().toString() + "OS.pdf"));
+                try {
+                    OutputStream outputStream = new FileOutputStream(file);
+                } catch (FileNotFoundException e) {
+                    e.printStackTrace();
+                }
+
+                PdfWriter writer = null;
+                try {
+                    writer = new PdfWriter(String.valueOf(file));
+                } catch (FileNotFoundException e) {
+                    e.printStackTrace();
+                }
+                PdfDocument pdfDocument = new PdfDocument(writer);
+                Document document = new Document(pdfDocument);
+
+
+                DeviceRgb verde = new DeviceRgb(51, 204, 51);
+                DeviceRgb cinza = new DeviceRgb(220, 220, 220);
+                Border brrr = new DottedBorder(1);
+                Border testes =new RidgeBorder(1);
+
+
+                float comunWidth1[] = {140,140, 140, 140};
+                Table table1 = new Table(comunWidth1);
+
+                //Insere a Logo:
+                Drawable d1 = getDrawable(R.drawable.bernini);
+                Bitmap bitmap1 = ((BitmapDrawable)d1).getBitmap();
+                ByteArrayOutputStream stream1 = new ByteArrayOutputStream();
+                bitmap1.compress(Bitmap.CompressFormat.PNG, 100, stream1);
+                byte[] bitmapData1 = stream1.toByteArray();
+
+                ImageData imageData1 = ImageDataFactory.create(bitmapData1);
+                Image image1 = new Image(imageData1);
+                image1.setHeight(120);
+
+                //tabela 1-----01
+                table1.addCell(new Cell(0, 4).add(image1).setBorder(Border.NO_BORDER));
+                table1.addCell(new Cell().add(new Paragraph("")).setBorder(Border.NO_BORDER));
+                table1.addCell(new Cell().add(new Paragraph("")).setBorder(Border.NO_BORDER));
+                //table1.addCell(new Cell(1, 2).add(new Paragraph("Ordem de Serviço").setFontSize(26f).setBold().setFontColor(Color.BLUE)).setBorder(Border.NO_BORDER));
+                //table1.addCell(new Cell().add(new Paragraph("")));
+
+
+                //tabela 1-----02
+                //table1.addCell(new Cell().add(new Paragraph("")));
+                table1.addCell(new Cell().add(new Paragraph("")).setBorder(Border.NO_BORDER).setBorderTop(testes));
+                table1.addCell(new Cell().add(new Paragraph("Ordem de Serviço").setFontSize(18f).setBold().setFontColor(Color.BLACK).setTextAlignment(TextAlignment.LEFT)).setBorder(Border.NO_BORDER));
+                //table1.addCell(new Cell().add(new Paragraph("")).setBorder(Border.NO_BORDER));
+
+                //tabela 1-----03
+                //table1.addCell(new Cell().add(new Paragraph("")));
+                //table1.addCell(new Cell().add(new Paragraph("")).setBorder(Border.NO_BORDER));
+                table1.addCell(new Cell().add(new Paragraph("")).setBorder(Border.NO_BORDER));
+                table1.addCell(new Cell().add(new Paragraph("")).setBorder(Border.NO_BORDER));
+
+                //tabela 1-----04
+                table1.addCell(new Cell().add(new Paragraph("")).setBorder(Border.NO_BORDER));
+                table1.addCell(new Cell().add(new Paragraph("")).setBorder(Border.NO_BORDER));
+                table1.addCell(new Cell().add(new Paragraph("")).setBorder(Border.NO_BORDER));
+                table1.addCell(new Cell().add(new Paragraph("Cliente").setBold()).setBorder(Border.NO_BORDER));
+
+                //tabela 1-----05
+                table1.addCell(new Cell().add(new Paragraph(cliente)).setBorder(Border.NO_BORDER));
+                table1.addCell(new Cell().add(new Paragraph("")).setBorder(Border.NO_BORDER));
+                table1.addCell(new Cell().add(new Paragraph("")).setBorder(Border.NO_BORDER));
+                table1.addCell(new Cell().add(new Paragraph("Celular").setBold()).setBorder(Border.NO_BORDER));
+
+                //tabela 1-----06
+                table1.addCell(new Cell().add(new Paragraph(celular)).setBorder(Border.NO_BORDER));
+                table1.addCell(new Cell().add(new Paragraph("")).setBorder(Border.NO_BORDER));
+                table1.addCell(new Cell().add(new Paragraph("")).setBorder(Border.NO_BORDER));
+                table1.addCell(new Cell().add(new Paragraph("Email").setBold()).setBorder(Border.NO_BORDER));
+
+                //tabela 1-----07
+                table1.addCell(new Cell().add(new Paragraph(emailCliente)).setBorder(Border.NO_BORDER));
+                //table1.addCell(new Cell().add(new Paragraph("")).setBorder(Border.NO_BORDER));
+                //table1.addCell(new Cell().add(new Paragraph("")).setBorder(Border.NO_BORDER));
+                table1.addCell(new Cell().add(new Paragraph("Endereço").setBold()).setBorder(Border.NO_BORDER));
+
+                //tabela 1-----08
+                table1.addCell(new Cell().add(new Paragraph(endereco)).setBorder(Border.NO_BORDER));
+                //table1.addCell(new Cell().add(new Paragraph("")));
+                //table1.addCell(new Cell(1,2).add(new Paragraph("")).setBorder(Border.NO_BORDER));
+                //table1.addCell(new Cell().add(new Paragraph("")));
+
+                //tabela 1-----09
+                table1.addCell(new Cell().add(new Paragraph("Descrição do Serviço").setBold()).setBorder(Border.NO_BORDER).setBorderTop(testes));
+                table1.addCell(new Cell(1,3).add(new Paragraph(descricao + "\n Valor da Mão de Obra:"+valMaoObra)).setBorder(Border.NO_BORDER).setBorderTop(testes));
+                table1.addCell(new Cell().add(new Paragraph("")).setBorder(Border.NO_BORDER));
+                table1.addCell(new Cell().add(new Paragraph("")).setBorder(Border.NO_BORDER));
+
+//ESTÁ PRONTO!! --->
+
+                float columnWidth2[] = {100f, 100f, 100f, 100f};
+//Table 1 left
+                Table table = new Table(columnWidth2);
+                table.setHorizontalAlignment(HorizontalAlignment.CENTER);
+
+                table.addCell(new Cell().add(new Paragraph("").setFontSize(12f).setFontColor(Color.BLACK)).setBackgroundColor(Color.WHITE).setBorder(Border.NO_BORDER));
+                table.addCell(new Cell().add(new Paragraph("")).setBackgroundColor(Color.WHITE).setBorder(Border.NO_BORDER));
+                table.addCell(new Cell().add(new Paragraph("")).setBackgroundColor(Color.WHITE).setBorder(Border.NO_BORDER));
+                table.addCell(new Cell().add(new Paragraph("")).setBackgroundColor(Color.WHITE).setBorder(Border.NO_BORDER));
+
+                table.addCell(new Cell().add(new Paragraph("Produto/ Peça").setFontColor(Color.BLACK)).setBold().setBackgroundColor(Color.GRAY));
+                table.addCell(new Cell().add(new Paragraph("Quantidade")).setFontColor(Color.BLACK)).setBold().setBackgroundColor(Color.GRAY);
+                table.addCell(new Cell().add(new Paragraph("Valor de Venda Unitário")).setFontColor(Color.BLACK)).setBold().setBackgroundColor(Color.GRAY);
+                table.addCell(new Cell().add(new Paragraph("Total")).setFontColor(Color.BLACK)).setBold().setBackgroundColor(Color.GRAY);
+
+                for(int i = 0; i<listaSoDeProdutos.size(); i++){
+
+                    //table.addCell(listaSoDeProdutos.get(i));
+                    table.addCell(new Cell().add(new Paragraph(listaSoDeProdutos.get(i))).setBackgroundColor(Color.WHITE));
+
+                }
+
+                table.addCell(new Cell().add(new Paragraph("")).setBackgroundColor(Color.WHITE).setBorder(Border.NO_BORDER));
+                // table.addCell(new Cell(1,2).add(new Paragraph("Terms & Conditions")));
+                table.addCell(new Cell().add(new Paragraph("")).setBackgroundColor(Color.WHITE).setBorder(Border.NO_BORDER));
+                table.addCell(new Cell().add(new Paragraph("Total Itens:")).setFontColor(Color.BLACK).setBackgroundColor(Color.GRAY));
+                table.addCell(new Cell().add(new Paragraph(oi)).setFontColor(Color.BLACK).setBackgroundColor(cinza));
+
+                table.addCell(new Cell(1,2).add(new Paragraph("")).setBackgroundColor(Color.WHITE).setBorder(Border.NO_BORDER));
+                table.addCell(new Cell().add(new Paragraph("Mão de Obra")).setFontColor(Color.BLACK));
+                table.addCell(new Cell().add(new Paragraph(valMaoObra)).setFontColor(Color.BLACK).setBackgroundColor(cinza));
+                //table.addCell(new Cell().add(new Paragraph("")));
+                // table.addCell(new Cell().add(new Paragraph("")));
+
+                table.addCell(new Cell(1,2).add(new Paragraph("")).setBackgroundColor(Color.WHITE).setBorder(Border.NO_BORDER));
+                // table.addCell(new Cell(1,2).add(new Paragraph("Terms & Conditions")));
+                table.addCell(new Cell().add(new Paragraph("TOTAL")).setFontColor(Color.BLACK).setBackgroundColor(Color.GRAY));
+                table.addCell(new Cell().add(new Paragraph(totalOsString)).setFontColor(Color.BLACK).setBackgroundColor(Color.WHITE));
+                //table.addCell(new Cell().add(new Paragraph("")));
+
+
+                //DADOS DA EMPRESA!!ABAIXO
+
+                float columnWidth5[] = {50, 250};
+                Table table3 = new Table(columnWidth5);
+/*
+        Drawable d2 = getDrawable(R.drawable.logo);
+        Bitmap bitmap2 = ((BitmapDrawable)d2).getBitmap();
+        ByteArrayOutputStream stream2 = new ByteArrayOutputStream();
+        bitmap2.compress(Bitmap.CompressFormat.PNG, 100, stream2);
+        byte[] bitmapData2 = stream2.toByteArray();
+
+        ImageData imageData2 = ImageDataFactory.create(bitmapData2);
+        Image image2 = new Image(imageData2);
+        image2.setHeight(120);
+*/
+                //table3.addCell(new Cell().add(new Paragraph("Empresa")));
+                //table3.addCell(new Cell().add(new Paragraph(nome)));
+                //table3.addCell(new Cell().add(new Paragraph("Contato & Fone")));
+                //table3.addCell(new Cell().add(new Paragraph(cel +"    /    "+tel)));
+                //table3.addCell(new Cell().add(new Paragraph("Email")));
+               // table3.addCell(new Cell().add(new Paragraph(email)));
+               // table3.addCell(new Cell().add(new Paragraph("Cep/ Edereço")));
+               // table3.addCell(new Cell().add(new Paragraph(cep)));
+
+                float columnWidth7[] = {300};
+                Table table4 = new Table(columnWidth7);
+                //table4.addCell(new Cell().add(new Paragraph(nome)).setFontSize(18f).setFontColor(Color.BLACK).setBold().setBorder(Border.NO_BORDER));
+
+
+
+                document.add(table1);
+                document.add(new Paragraph("\n"));
+                document.add(table);
+                document.add(new Paragraph("\n").setTextAlignment(TextAlignment.RIGHT));
+                document.add(table4);
+                document.add(table3);
+                document.add(new Paragraph("\nEmitido em: " + dataPatternFormat.format(new Date().getTime())+"\n").setTextAlignment(TextAlignment.LEFT));
+
+                document.close();
+                Toast.makeText(DetalhesOsActivity.this, editNomePdf.getText().toString()+ "OS.pdf Salvo com Sucesso!", Toast.LENGTH_LONG).show();
+
+
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
+
+
+    }
+
+
 
 
 }

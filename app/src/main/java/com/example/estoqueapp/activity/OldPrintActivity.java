@@ -79,9 +79,9 @@ public class OldPrintActivity extends AppCompatActivity {
         dataTable = findViewById(R.id.data_table);
 
 
-        header = new DataTableHeader.Builder().item("produto", 5)
-                .item("cód", 5)
-                .item("qtd", 5)
+        header = new DataTableHeader.Builder().item("Peça/ Prod", 5)
+                .item("Cód", 5)
+                .item("QTD", 5)
                 .item("valUnit", 5)
                 .item("valTotal", 5)
                 .item("valVenda", 5).build();
@@ -227,12 +227,12 @@ public class OldPrintActivity extends AppCompatActivity {
 
                     float columnWidth[] = {200f, 200f, 100f, 150f, 150f, 150f};
                     Table table = new Table(columnWidth);
+                    table.addCell(new Cell().add(new Paragraph("Peça")).setFontColor(Color.WHITE).setBackgroundColor(Color.BLUE).setBold());
                     table.addCell(new Cell().add(new Paragraph("Código")).setFontColor(Color.WHITE).setBackgroundColor(Color.BLUE).setBold());
-                    table.addCell(new Cell().add(new Paragraph("Produto")).setFontColor(Color.WHITE).setBackgroundColor(Color.BLUE).setBold());
-                    table.addCell(new Cell().add(new Paragraph("Quantidade")).setFontColor(Color.WHITE).setBackgroundColor(Color.BLUE).setBold());
-                    table.addCell(new Cell().add(new Paragraph("Valor Unitário")).setFontColor(Color.WHITE).setBackgroundColor(Color.BLUE).setBold());
-                    table.addCell(new Cell().add(new Paragraph("Valor Total")).setFontColor(Color.WHITE).setBackgroundColor(Color.BLUE).setBold());
-                    table.addCell(new Cell().add(new Paragraph("Valor de Venda")).setFontColor(Color.WHITE).setBackgroundColor(Color.BLUE).setBold());
+                    table.addCell(new Cell().add(new Paragraph("QTD")).setFontColor(Color.WHITE).setBackgroundColor(Color.BLUE).setBold());
+                    table.addCell(new Cell().add(new Paragraph("Val. Unitário")).setFontColor(Color.WHITE).setBackgroundColor(Color.BLUE).setBold());
+                    table.addCell(new Cell().add(new Paragraph("Val. Total")).setFontColor(Color.WHITE).setBackgroundColor(Color.BLUE).setBold());
+                    table.addCell(new Cell().add(new Paragraph("Val. Venda")).setFontColor(Color.WHITE).setBackgroundColor(Color.BLUE).setBold());
 
                 for(DataSnapshot myDataSnapshot : snapshot.getChildren()){
                     codigo = (String.valueOf(myDataSnapshot.child("codigo").getValue()));
